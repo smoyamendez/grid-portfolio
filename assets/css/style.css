@@ -1,0 +1,401 @@
+html, * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --dark: #19211c;
+    --medium: #C5C1BB;
+    --light: #EFF0EB;
+    --accent-yellow: #EACB48 ;
+    --accent-blue:#00A099;
+}
+body {
+    background-color: var(--dark);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--light);
+    max-width: 100%;
+}
+ 
+/* Header Styles*/
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+header h1 {
+    /* font-size: 80px; */
+    color: var(--light);
+    margin: 10px;
+    padding: 0px;
+}
+
+/* Nav Styles*/
+
+nav {
+    margin: 20px;
+    padding: 20px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 20px;
+    padding: 20px;
+    font-size: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--accent-yellow);
+}
+
+nav a:hover {
+    color: var(--accent-blue);
+}
+
+
+/*main page setup*/
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 2000px;
+    margin: auto;
+}
+
+main > article {
+    display: flex;
+    flex-direction: row;
+    margin: 80px 0px;
+}
+
+#aboutme, #projects, #contact, #resume {
+    width: 100%;
+    padding-left: 120px;
+    padding-right: 80px;
+}
+
+/* Left Side Section Header Styles */
+
+h2 {
+    font-size: 96px;
+    color: var(--accent-yellow);
+    writing-mode: vertical-rl;
+    text-orientation: sideways-right;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 10px 0px 15px;
+    /* text-decoration-line: overline; */
+    font-family: 'Rubik Mono One', sans-serif;
+    /* border-right: 2px solid var(--accent-blue);  */
+}
+
+/* About me section */
+#aboutme {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.about-main > img {
+    border-radius: 12px;
+    border: 8px solid var(--accent-yellow);
+    margin-left: 20px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+#aboutme p {
+    font-size: 24px;
+    margin: auto 50px;
+    text-align: block;
+}
+
+#aboutme p strong {
+    color: var(--accent-yellow);
+}
+
+/* Project section */
+
+#projects {
+    /* display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between; */
+}
+
+
+.project-block-large{
+    /* display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    order: 1; */
+    /* justify-content: center;
+    align-items: center; */
+    border: 8px solid var(--accent-yellow);
+    border-radius: 12px;
+    /* padding: 12px; */
+    margin: 20px;
+}
+
+.project-block{
+    /* display: flex;
+    flex-direction: column;
+    flex-basis: 45%;
+    order:2; */
+    border: 8px solid var(--accent-yellow);
+    border-radius: 12px;
+    /* padding: 12px; */
+    margin: 20px;
+}
+
+h3 {
+    font-size: 36px;
+    color: var(--dark);
+    background-color: var(--accent-yellow);
+    padding: 20px;
+}
+
+.repoLink {
+    font-size:36px;
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.repoLink:hover {
+    color: var(--accent-blue);
+}
+
+/* Contact section */
+
+#contact {
+    display:flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#contact ul {
+    display: flex;
+    flex-direction: column;
+}
+#contact ul li  {
+    display: inline;
+    font-size: 36px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* color: var(--accent-yellow) */
+}
+#contact a {
+    text-decoration: none;
+    color: var(--light);
+}
+
+/* Resume section */
+
+/* #resume {
+    display:flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#resume a {
+    font-size: 36px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    color: var(--light);
+} */
+
+/* RESUME PAGE */
+
+#resumeDownload {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#resumeDownload a {
+    text-decoration: none;
+    color: var(--light);
+    font-size: 32px;
+    border-style: solid;
+    border-radius: 12px;
+    border-color: var(--accent-blue);
+    padding: 10px;
+}
+
+#resumeDownload a:hover {
+    color: var(--accent-yellow);
+}
+
+#resumeImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+/* GRID LAYOUT */
+main {
+    display: grid;
+    grid-template-columns: .25fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "about-header about-main about-main"
+    "projects-header project project"
+    ". project project"
+    "contact-header contact .";
+}
+
+.about-header {
+    grid-area: about-header;
+    font-family: 'Rubik Mono One', sans-serif;
+}
+
+.about-img {
+grid-area: about-img;
+}
+
+.about-main {
+grid-area: about-main;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+}
+
+
+.projects-header {
+    grid-area: projects-header;
+}
+
+.project {
+    grid-area: project;
+}
+
+.contact-header {
+    grid-area: contact-header;
+}
+
+.contact {
+    grid-area: contact;
+}
+/* MEDIA QUERY */
+
+@media screen and (max-width: 1400px) {
+    
+    #aboutme p {
+        font-size: 1.4rem;
+    }
+    #aboutme img {
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+
+@media screen and (max-width: 875px) {
+    
+    #aboutme, #projects, #contact, #resume {
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+    #aboutme img {
+        width:50%;
+        height: 50%;
+        margin: 0px 0px 20px 0px;
+        padding: 0 auto;
+    }
+    #aboutme p {
+        font-size: 1.7rem;
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+
+    .project-block-large {
+        flex-basis: 25%;
+    }
+
+    .project-block {
+        flex-basis: 25%;
+        overflow: hidden;
+    }
+
+    nav ul li {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        padding: 10px;
+        font-size: 40px;
+    }
+}
+    
+@media screen and (max-width: 500px) {
+    main {
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #aboutme, #projects, #contact, #resume {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    h2 {
+        font-size: 75px;
+        color: var(--accent-yellow);
+        writing-mode: horizontal-tb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* padding: 0px 10px 0px 15px; */
+        text-decoration-line: none;
+    }
+
+    #aboutme img {
+        width: 100%;
+        height: 100%;
+        margin: 10px 0px 20px 0px;
+        padding: 0 auto;
+    }
+    #aboutme p {
+        font-size: 1.7rem;
+        width: 350px;
+    }
+
+    /* .project-block-large {
+        flex-basis: 25%;
+    }
+
+    .project-block {
+        flex-basis: 25%;
+        overflow: hidden;
+    } */
+
+    #contact ul li, #resume a {
+        font-size: 1.7rem;
+    }
+    }
