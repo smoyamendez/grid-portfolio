@@ -46,7 +46,9 @@ nav ul li {
     display: inline;
     margin: 20px;
     padding: 20px;
-    font-size: 40px;
+    font-size: 32px;
+    font-family: 'Rubik Mono One', sans-serif;
+    text-shadow: var(--accent-blue) 2px 3px;
 }
 
 nav a {
@@ -61,7 +63,7 @@ nav a:hover {
 
 /*main page setup*/
 
-main {
+/* main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -73,12 +75,10 @@ main > article {
     display: flex;
     flex-direction: row;
     margin: 80px 0px;
-}
+} */
 
-#aboutme, #projects, #contact, #resume {
-    width: 100%;
-    padding-left: 120px;
-    padding-right: 80px;
+i {
+    margin-right: 12px ;
 }
 
 /* Left Side Section Header Styles */
@@ -91,18 +91,21 @@ h2 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0px 10px 0px 15px;
+    margin: -20px;
     /* text-decoration-line: overline; */
     font-family: 'Rubik Mono One', sans-serif;
     /* border-right: 2px solid var(--accent-blue);  */
+    text-shadow: var(--accent-blue) 4px 5px;
 }
 
+
 /* About me section */
-#aboutme {
+.about-main {
     display:flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     margin-bottom: 50px;
+    
 }
 
 .about-main > img {
@@ -113,23 +116,28 @@ h2 {
     max-height: 200px;
 }
 
-#aboutme p {
-    font-size: 24px;
+.about-main p {
+    font-size: 32px;
     margin: auto 50px;
-    text-align: block;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
 }
 
-#aboutme p strong {
+.about-main p > span {
+    font-size: 44px;
+    padding-bottom: 10px;
+}
+
+.about-main p strong {
     color: var(--accent-yellow);
 }
 
-/* Project section */
-
-#projects {
-    /* display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between; */
+.strong-name {
+    font-family: 'Rubik Mono One', sans-serif;
+    text-shadow: var(--accent-blue) 2px 3px;
 }
+/* Project section */
 
 
 .project-block-large{
@@ -154,6 +162,7 @@ h2 {
     border-radius: 12px;
     /* padding: 12px; */
     margin: 20px;
+   
 }
 
 h3 {
@@ -167,6 +176,7 @@ h3 {
     font-size:36px;
     color: var(--dark);
     text-decoration: none;
+    
 }
 
 .repoLink:hover {
@@ -175,24 +185,24 @@ h3 {
 
 /* Contact section */
 
-#contact {
+.contact {
     display:flex;
     flex-direction: row;
     margin-top: 40px;
     margin-bottom: 40px;
 }
-#contact ul {
+.contact ul {
     display: flex;
     flex-direction: column;
 }
-#contact ul li  {
+.contact ul li  {
     display: inline;
     font-size: 36px;
     padding-top: 10px;
     padding-bottom: 10px;
     /* color: var(--accent-yellow) */
 }
-#contact a {
+.contact a {
     text-decoration: none;
     color: var(--light);
 }
@@ -247,28 +257,31 @@ h3 {
 main {
     display: grid;
     grid-template-columns: .25fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: .75fr 1fr 1fr;
     grid-template-areas:
     "about-header about-main about-main"
-    "projects-header project project"
-    ". project project"
+    "projects-header project-left project-right"
+    ". project-left project-right"
     "contact-header contact .";
 }
 
 .about-header {
     grid-area: about-header;
-    font-family: 'Rubik Mono One', sans-serif;
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+
 }
 
 .about-img {
-grid-area: about-img;
+    grid-area: about-img;
 }
 
 .about-main {
-grid-area: about-main;
-display: flex;
-align-items: center;
-justify-content: flex-start;
+    grid-area: about-main;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 
@@ -276,16 +289,24 @@ justify-content: flex-start;
     grid-area: projects-header;
 }
 
-.project {
-    grid-area: project;
+.project-left {
+    grid-area: project-left;
+}
+
+.project-right {
+    grid-area: project-right;
 }
 
 .contact-header {
     grid-area: contact-header;
+    display: flex;
+    align-items: center;
 }
 
 .contact {
     grid-area: contact;
+    display: flex;
+    align-items: center;
 }
 /* MEDIA QUERY */
 
@@ -370,7 +391,7 @@ justify-content: flex-start;
         writing-mode: horizontal-tb;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-content: center;
         /* padding: 0px 10px 0px 15px; */
         text-decoration-line: none;
     }
