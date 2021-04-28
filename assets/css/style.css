@@ -16,6 +16,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--light);
     max-width: 100%;
+       display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://www.transparenttextures.com/patterns/binding-dark.png");
+
 }
  
 /* Header Styles*/
@@ -35,6 +41,17 @@ header h1 {
     padding: 0px;
 }
 
+.header-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 8px solid var(--accent-yellow);
+    padding: 60px 40px 20px 40px;
+    margin-top: -60px;
+}
+
 /* Nav Styles*/
 
 nav {
@@ -48,7 +65,7 @@ nav ul li {
     padding: 20px;
     font-size: 32px;
     font-family: 'Rubik Mono One', sans-serif;
-    text-shadow: var(--accent-blue) 2px 3px;
+    text-shadow: var(--accent-blue) 1px 3px;
 }
 
 nav a {
@@ -58,28 +75,11 @@ nav a {
 
 nav a:hover {
     color: var(--accent-blue);
+    text-shadow: var(--accent-yellow) 1px 3px;
 }
 
 
-/*main page setup*/
 
-/* main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    max-width: 2000px;
-    margin: auto;
-}
-
-main > article {
-    display: flex;
-    flex-direction: row;
-    margin: 80px 0px;
-} */
-
-i {
-    margin-right: 12px ;
-}
 
 /* Left Side Section Header Styles */
 
@@ -100,6 +100,7 @@ h2 {
 
 
 /* About me section */
+
 .about-main {
     display:flex;
     flex-direction: row;
@@ -108,18 +109,23 @@ h2 {
     
 }
 
-.about-main > img {
+.about-block {
+    display:inline-block;
+    
+}
+.about-block > img {
     border-radius: 12px;
     border: 8px solid var(--accent-yellow);
     margin-left: 20px;
     max-width: 200px;
     max-height: 200px;
+    
 }
 
 .about-main p {
     font-size: 32px;
-    margin: auto 50px;
-    padding: 100px;
+    /* margin: auto 50px;
+    padding: 100px; */
     display: flex;
     flex-direction: column;
 }
@@ -137,8 +143,11 @@ h2 {
     font-family: 'Rubik Mono One', sans-serif;
     text-shadow: var(--accent-blue) 2px 3px;
 }
-/* Project section */
 
+.about-block {
+    max-width: 72%;
+}
+/* Project section */
 
 .project-block-large{
     /* display: flex;
@@ -170,6 +179,7 @@ h3 {
     color: var(--dark);
     background-color: var(--accent-yellow);
     padding: 20px;
+    overflow: hidden;
 }
 
 .repoLink {
@@ -182,7 +192,124 @@ h3 {
 .repoLink:hover {
     color: var(--accent-blue);
 }
+.project-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accent-yellow);
+}
+.project-btn {
+    background-color: var(--accent-blue); /* Green */
+    border: none;
+    color: var(--accent-yellow);
+    border: 8px solid var(--accent-yellow);
+    border-radius: 12px;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 36px;
+    
+}
+/* CAROUSEL */
+* {box-sizing:border-box}
 
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1500px;
+  position: relative;
+  margin: auto;
+  border: 8px solid var(--accent-yellow);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: var(--accent-blue);
+  font-weight: bold;
+  font-size: 40px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
 /* Contact section */
 
 .contact {
@@ -207,22 +334,27 @@ h3 {
     color: var(--light);
 }
 
-/* Resume section */
-
-/* #resume {
-    display:flex;
-    flex-direction: row;
-    margin-top: 40px;
-    margin-bottom: 40px;
+footer {
+    margin-top: 100px;
 }
-
-#resume a {
+footer ul {
+    display: flex;
+    flex-direction: row;
+}
+footer ul li  {
+    display: inline;
     font-size: 36px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 20px;
+    /* color: var(--accent-yellow) */
+}
+footer a {
     text-decoration: none;
     color: var(--light);
-} */
+}
+
+i {
+    margin-right: 12px ;
+}
 
 /* RESUME PAGE */
 
@@ -256,13 +388,12 @@ h3 {
 /* GRID LAYOUT */
 main {
     display: grid;
-    grid-template-columns: .25fr 1fr 1fr;
-    grid-template-rows: .75fr 1fr 1fr;
+    grid-template-columns: 20rem 1fr 20rem;
+    grid-template-rows: .75fr 1fr;
     grid-template-areas:
-    "about-header about-main about-main"
-    "projects-header project-left project-right"
-    ". project-left project-right"
-    "contact-header contact .";
+    "about-header about-main ."
+    "projects-header projects .";
+    /* "contact-header contact ."; */
 }
 
 .about-header {
@@ -280,8 +411,8 @@ main {
 .about-main {
     grid-area: about-main;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
 }
 
 
@@ -289,13 +420,13 @@ main {
     grid-area: projects-header;
 }
 
-.project-left {
-    grid-area: project-left;
+.projects {
+    grid-area: projects;
+    display: flex;
+    justify-content: center;
+
 }
 
-.project-right {
-    grid-area: project-right;
-}
 
 .contact-header {
     grid-area: contact-header;
@@ -306,8 +437,10 @@ main {
 .contact {
     grid-area: contact;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
+
 /* MEDIA QUERY */
 
 @media screen and (max-width: 1400px) {
@@ -321,7 +454,6 @@ main {
     }
 
 }
-
 
 @media screen and (max-width: 875px) {
     
