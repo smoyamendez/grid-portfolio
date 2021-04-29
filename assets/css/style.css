@@ -11,12 +11,13 @@ html, * {
     --accent-yellow: #EACB48 ;
     --accent-blue:#00A099;
 }
+
 body {
     background-color: var(--dark);
     font-family: Arial, Helvetica, sans-serif;
     color: var(--light);
     max-width: 100%;
-       display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -50,6 +51,8 @@ header h1 {
     border: 8px solid var(--accent-yellow);
     padding: 60px 40px 20px 40px;
     margin-top: -60px;
+    box-shadow: ;
+    /* background-color: rgb(197, 193, 187, 0.5); */
 }
 
 /* Nav Styles*/
@@ -98,7 +101,10 @@ h2 {
     text-shadow: var(--accent-blue) 4px 5px;
 }
 
-
+main {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
 /* About me section */
 
 .about-main {
@@ -415,7 +421,6 @@ main {
     align-items: center;
 }
 
-
 .projects-header {
     grid-area: projects-header;
 }
@@ -443,112 +448,72 @@ main {
 
 /* MEDIA QUERY */
 
-@media screen and (max-width: 1400px) {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body {
     
-    #aboutme p {
-        font-size: 1.4rem;
-    }
-    #aboutme img {
-        width: 100%;
-        height: 100%;
+        font-size: 1rem;
     }
 
-}
-
-@media screen and (max-width: 875px) {
-    
-    #aboutme, #projects, #contact, #resume {
-        flex-direction: column;
-        margin: 0 auto;
-        padding: 0 auto;
-    }
-    #aboutme img {
-        width:50%;
-        height: 50%;
-        margin: 0px 0px 20px 0px;
-        padding: 0 auto;
-    }
-    #aboutme p {
-        font-size: 1.7rem;
-        margin: 0 auto;
-        padding: 0 auto;
-    }
-
-    .project-block-large {
-        flex-basis: 25%;
-    }
-
-    .project-block {
-        flex-basis: 25%;
-        overflow: hidden;
-    }
-
-    nav ul li {
-        display: flex;
-        flex-direction: column;
-        margin: 10px;
-        padding: 10px;
-        font-size: 40px;
-    }
-}
-    
-@media screen and (max-width: 500px) {
     main {
-        max-width: 350px;
-        display: flex;
-        flex-direction: column;
+        width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
     }
 
-    header {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
-    article {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    #aboutme, #projects, #contact, #resume {
+    #about-header #project-header {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
     h2 {
-        font-size: 75px;
-        color: var(--accent-yellow);
+        font-size: 3rem;
         writing-mode: horizontal-tb;
         display: flex;
         justify-content: center;
-        align-content: center;
-        /* padding: 0px 10px 0px 15px; */
-        text-decoration-line: none;
+        align-items: center;
     }
 
-    #aboutme img {
-        width: 100%;
-        height: 100%;
-        margin: 10px 0px 20px 0px;
-        padding: 0 auto;
-    }
-    #aboutme p {
-        font-size: 1.7rem;
-        width: 350px;
+    .header-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 50%;
+        border: hidden;
     }
 
-    /* .project-block-large {
-        flex-basis: 25%;
+    nav {
+        display: none;
     }
+    .logo {
+        height: 75%;
+        width: auto;
+    }
+    nav ul li {
+        font-size: 1.5;
+    }
+    
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 300px) {
+    
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
 
-    .project-block {
-        flex-basis: 25%;
-        overflow: hidden;
-    } */
+  } 
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
 
-    #contact ul li, #resume a {
-        font-size: 1.7rem;
-    }
-    }
+  }
