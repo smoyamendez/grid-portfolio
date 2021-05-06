@@ -24,7 +24,10 @@ body {
     background-image: url("https://www.transparenttextures.com/patterns/binding-dark.png");
 
 }
- 
+
+.mobile-visible {
+    display: none;
+}
 /* Header Styles*/
 
 header {
@@ -399,7 +402,6 @@ main {
     grid-template-areas:
     "about-header about-main ."
     "projects-header projects .";
-    /* "contact-header contact ."; */
 }
 
 .about-header {
@@ -446,74 +448,255 @@ main {
     align-items: center;
 }
 
-/* MEDIA QUERY */
+/
+  
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+      
+} 
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    body {
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
     
-        font-size: 1rem;
-    }
+}
 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 1024px) {
+    body {
+        min-width: 300px;
+    }
+  
+    .header-box {
+        min-width: 300px;
+        border: hidden;
+    }
+  
     main {
+        margin: 20px 0px;
+        padding: 0px;
         width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: .25fr 1fr;
+        grid-template-areas:
+        "about-header"
+        "about-main"
+        "projects-header"
+        "projects";
+        border-bottom: 1px solid var(--accent-yellow);
     }
-
-    #about-header #project-header {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
+  
     h2 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         writing-mode: horizontal-tb;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 0px;
+        padding: 0px;
     }
-
-    .header-box {
+  
+    #about, #projects {
+        margin: 0px;
+        padding: 0px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        max-width: 50%;
-        border: hidden;
+      border-bottom: 1px solid var(--accent-yellow);
+      height: 58px;
+      width: 100%;
     }
-
+  
+    .about-main {
+        padding: 0px;
+        margin: 20px 0px;
+    }
+  
+  
+    .slideshow-container {
+        width: 75%;
+        position: relative;
+        margin: auto;
+        border: 8px solid var(--accent-yellow);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      
+      h3 {
+          font-size: .75rem;
+      }
+      
+      .project-btn {
+          font-size: .75rem;
+      }
+  
+      .project-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        
+      }
+  
+    .about-main p {
+        font-size: 1.2rem;
+    }
+    
+    .about-main p > span {
+        font-size: 1.4rem;
+    }
+    
+    footer {
+        padding: 0px;
+        margin: 0px;
+    }
+  
+    /* footer ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    } */
+    
+    footer ul li {
+        font-size: 1rem;
+        padding: 4px;
+  
+    }
+  
+    .mobile-visible {
+        display: block;
+    }
+  
     nav {
         display: none;
     }
-    .logo {
-        height: 75%;
-        width: auto;
+  
+    .projects {
+        margin: 50px 0px;
+    
     }
-    nav ul li {
-        font-size: 1.5;
+
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 767px) {
+  body {
+      min-width: 300px;
+  }
+
+  .header-box {
+      min-width: 300px;
+      border: hidden;
+  }
+
+  main {
+      margin: 20px 0px;
+      padding: 0px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: .25fr 1fr;
+      grid-template-areas:
+      "about-header"
+      "about-main"
+      "projects-header"
+      "projects";
+      border-bottom: 1px solid var(--accent-yellow);
+  }
+
+  h2 {
+      font-size: 2.5rem;
+      writing-mode: horizontal-tb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0px;
+      padding: 0px;
+  }
+
+  #about, #projects {
+      margin: 0px;
+      padding: 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    border-bottom: 1px solid var(--accent-yellow);
+    height: 58px;
+    width: 100%;
+  }
+
+  .about-main {
+      padding: 0px;
+      margin: 20px 0px;
+  }
+
+
+  .slideshow-container {
+      width: 75%;
+      position: relative;
+      margin: auto;
+      border: 8px solid var(--accent-yellow);
+      border-radius: 12px;
+      overflow: hidden;
     }
     
-  }
-  
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-  @media only screen and (min-width: 300px) {
+    h3 {
+        font-size: .75rem;
+    }
     
+    .project-btn {
+        font-size: .75rem;
+    }
+
+    .project-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      
+    }
+
+  .about-main p {
+      font-size: 1.2rem;
   }
   
-  /* Medium devices (landscape tablets, 768px and up) */
-  @media only screen and (min-width: 768px) {
-    
-  } 
+  .about-main p > span {
+      font-size: 1.4rem;
+  }
   
-  /* Large devices (laptops/desktops, 992px and up) */
-  @media only screen and (min-width: 992px) {
+  footer {
+      padding: 0px;
+      margin: 0px;
+  }
 
-  } 
+  footer ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
   
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
-  @media only screen and (min-width: 1200px) {
+  footer ul li {
+      font-size: 1rem;
+      padding: 4px;
 
   }
+
+  .mobile-hidden {
+      display: none;
+  }
+
+  .mobile-visible {
+      display: block;
+  }
+
+  nav {
+      display: none;
+  }
+
+  .projects {
+      margin: 50px 0px;
+  
+  }
+
+  }
+ 
+
