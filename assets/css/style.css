@@ -448,8 +448,7 @@ main {
     align-items: center;
 }
 
-/
-  
+
   
   /* Large devices (laptops/desktops, 992px and up) */
   @media only screen and (min-width: 992px) {
@@ -457,8 +456,35 @@ main {
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    
+@media only screen and (max-width: 1425px) {
+    body {
+        width: 100%;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 10rem 1fr 10rem;
+        grid-template-rows: .75fr 1fr;
+        grid-template-areas:
+        "about-header about-main ."
+        "projects-header projects .";
+    }
+
+    footer ul li {
+        font-size: 1.5rem;
+        padding: 4px;
+    }
+    header {
+        width: 100%;
+    }
+    .header-box {
+        width: 90%;
+        border: hidden;
+    }
+
+    nav ul li a {
+        font-size: 1.5rem;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
